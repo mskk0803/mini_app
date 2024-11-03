@@ -11,13 +11,13 @@ class UserSessions::SessionsController < Devise::SessionsController
   # POST /resource/sign_in
   def create
     super
-    redirect_to games_path
+    games_path
   end
 
   # DELETE /resource/sign_out
   def destroy
     super
-    redirect_to games_path
+    games_path
   end
 
   # protected
