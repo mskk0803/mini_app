@@ -77,3 +77,5 @@ end
 gem "devise", "~> 4.9"
 
 gem "importmap-rails", "~> 2.0"
+
+gem 'pry-rails'

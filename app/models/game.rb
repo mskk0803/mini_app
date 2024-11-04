@@ -1,3 +1,4 @@
 class Game < ApplicationRecord
-  has_rich_text :title
+  validates :title, presence: true
+  has_rich_text :content
 end
