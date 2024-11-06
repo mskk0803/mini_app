@@ -1,3 +1,13 @@
-<div class="bg-zinc-500">
-    <%= link_to game.title, game_path(game) %>
+<div class="mb-10 border-t border-b divide-y">
+    <div class="grid py-8 sm:grid-cols-4">
+        <div class="sm:col-span-3 lg:col-span-2">
+            <div class="mb-3">
+                <%= link_to game.title, game_path(game), class:"inline-block text-black transition-colors duration-200 hover:text-deep-purple-accent-700 text-3xl font-extrabold leading-none sm:text-4xl xl:text-4xl" %>
+            </div>
+            <p class="text-gray-700">
+                タグをここに表示
+            </p>
+        </div>
+    </div>
 </div>
+
