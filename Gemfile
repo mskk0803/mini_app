@@ -81,3 +81,5 @@ gem "importmap-rails", "~> 2.0"
 gem 'pry-rails'
 
 gem "tailwindcss-rails", "~> 3.0"
+
+# gem 'ruby-vips', '~> 2.2', '>= 2.2.2'
