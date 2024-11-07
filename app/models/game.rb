@@ -7,10 +7,13 @@ class Game < ApplicationRecord
 
   def save_tag(tag_name)
     tag_array = tag_name.split(",").uniq
-    old_tags = self.tags.map{|t| t.name}
-    new_tags = tag_array - old_tags
+    # 古いtagの削除
+    old_relations = GameTag.where(game_id: self.id)
+    old_relations.each do |r|
+      r.delete
+    end
 
-    new_tags.each do |t|
+    tag_array.each do |t|
       tag = Tag.find_or_initialize_by(name: t)
       self.tags << tag
     end

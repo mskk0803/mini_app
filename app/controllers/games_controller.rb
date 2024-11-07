@@ -31,7 +31,9 @@ class GamesController < ApplicationController
 
   def update
     @game = Game.find(params[:id])
+    tag_name = params[:tag_name]
     if @game.update(game_params)
+      @game.save_tag(tag_name)
       redirect_to games_path
     else
       redirect_to games_path
