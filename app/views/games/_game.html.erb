@@ -5,7 +5,7 @@
                 <%= link_to game.title, game_path(game), class:"inline-block text-black transition-colors duration-200 hover:text-deep-purple-accent-700 text-3xl font-extrabold leading-none sm:text-4xl xl:text-4xl" %>
             </div>
             <p class="text-gray-700">
-                タグをここに表示
+                <%= game.tags.pluck(:name).join(",") %>
             </p>
         </div>
     </div>

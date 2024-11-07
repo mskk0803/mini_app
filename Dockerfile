@@ -15,6 +15,9 @@ RUN curl -sL https://deb.nodesource.com/setup_${NODE_VERSION}.x | bash - \
 && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
 && apt-get update -qq \
 && apt-get install -y build-essential nodejs yarn
+## 追加
+RUN apt-get update -qq && apt-get install -y postgresql-client
+
 RUN mkdir /mini_app
 WORKDIR /mini_app
 RUN gem install bundler

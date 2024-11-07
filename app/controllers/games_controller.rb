@@ -6,6 +6,7 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
+    @tags = @game.tags.pluck(:name).join(",")
   end
 
   def new
@@ -14,7 +15,9 @@ class GamesController < ApplicationController
 
   def create
     @game = Game.new(game_params)
+    tag_name = params[:tag_name]
     if @game.save
+      @game.save_tag(tag_name)
       redirect_to games_path
     else
       redirect_to games_path
@@ -23,6 +26,7 @@ class GamesController < ApplicationController
 
   def edit
     @game = Game.find(params[:id])
+    @tags = @game.tags.pluck(:name).join(",")
   end
 
   def update
