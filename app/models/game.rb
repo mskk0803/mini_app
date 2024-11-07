@@ -3,6 +3,7 @@ class Game < ApplicationRecord
   has_rich_text :content
   has_many :game_tags, dependent: :destroy
   has_many :tags, through: :game_tags
+  has_many :comment, dependent: :destroy
 
   def save_tag(tag_name)
     tag_array = tag_name.split(",").uniq
