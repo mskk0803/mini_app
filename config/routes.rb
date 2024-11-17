@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "games#index"
   resources :games, only: %i[index new create show edit update destroy]
+  get  "tags/search" => "tags#search"
 end

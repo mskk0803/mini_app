@@ -2,7 +2,12 @@
   "name": "app",
   "private": true,
   "devDependencies": {
-    "esbuild": "^0.24.0"
+    "esbuild": "^0.24.0",
+    "sass": "^1.81.0",
+    "sass-loader": "^16.0.3",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.96.1",
+    "webpack-cli": "^5.1.4"
   },
   "scripts": {
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets",
@@ -12,8 +17,8 @@
     "@hotwired/stimulus": "^3.2.2",
     "@hotwired/turbo-rails": "^8.0.12",
     "@rails/actiontext": "^7.2.200",
+    "@yaireo/tagify": "^4.32.0",
     "chokidar": "^4.0.1",
-    "sass": "^1.80.6",
     "trix": "^2.1.8"
   }
 }
