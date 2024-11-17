@@ -1,4 +1,5 @@
 class GamesController < ApplicationController
+  require "json"
   skip_before_action :authenticate_user!, only: %i[index show]
   def index
     @games = Game.all
@@ -15,10 +16,9 @@ class GamesController < ApplicationController
 
   def create
     @game = Game.new(game_params)
-
-    tag_name = params[:game][:tag]
+    tag_json = params[:game][:tag]
     if @game.save
-      @game.save_tag(tag_name)
+      @game.save_tag(tag_json)
       redirect_to games_path
     else
       redirect_to games_path
@@ -31,9 +31,9 @@ class GamesController < ApplicationController
 
   def update
     @game = Game.find(params[:id])
-    tag_name = params[:game][:tag]
+    tag_json = params[:game][:tag]
     if @game.update(game_params)
-      @game.save_tag(tag_name)
+      @game.save_tag(tag_json)
       redirect_to games_path
     else
       redirect_to games_path

@@ -5,8 +5,12 @@ class Game < ApplicationRecord
   has_many :tags, through: :game_tags
   has_many :comment, dependent: :destroy
 
-  def save_tag(tag_name)
-    tag_array = tag_name.split(",").uniq
+  def save_tag(tag_json)
+    binding.pry
+    json_array = JSON.parse(tag_json).map do |j|
+      j.values[0]
+    end
+    tag_array = json_array.uniq
     # 古いtagの削除
     old_relations = GameTag.where(game_id: self.id)
     old_relations.each do |r|

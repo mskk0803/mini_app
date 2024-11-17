@@ -1,6 +1,14 @@
 import { Controller } from "@hotwired/stimulus"
-import Tagify from '@yaireo/tagify'
- 
+import Tagify from "@yaireo/tagify"
+
+var input = document.getElementById("tags-input");
+// tagifyの設定
+  var tagify = new Tagify(input, {whitelist:[],
+    dropdown:{
+      enabled: 0,
+      closeOnSelect: false,
+    },
+  })
 
 // Connects to data-controller="tag"
 export default class extends Controller {

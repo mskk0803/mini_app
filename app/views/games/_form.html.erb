@@ -39,7 +39,7 @@
       <%= f.text_field :tag,
           id: "tags-input",
           value: @game.tags.pluck(:name).join(","), 
-          placeholder: ',で区切って入力してください',
+          placeholder: '[Enter]で区切って入力',
           class: "tagify",
           data: { controller: "tag" }
       %>
