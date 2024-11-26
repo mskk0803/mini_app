@@ -19,9 +19,11 @@ class GamesController < ApplicationController
     tag_json = params[:game][:tag]
     if @game.save
       @game.save_tag(tag_json)
+      flash[:notice] = "投稿しました"
       redirect_to games_path
     else
-      redirect_to games_path
+      flash.now[:alert] = "投稿に失敗しました"
+      render :new
     end
   end
 
@@ -34,9 +36,11 @@ class GamesController < ApplicationController
     tag_json = params[:game][:tag]
     if @game.update(game_params)
       @game.save_tag(tag_json)
+      flash[:notice] = "更新しました"
       redirect_to games_path
     else
-      redirect_to games_path
+      flash[:alert] = "更新に失敗しました"
+      render :edit
     end
   end
 
@@ -44,6 +48,7 @@ class GamesController < ApplicationController
     game = Game.find(params[:id])
     game.destroy!
     redirect_to games_path
+    flash[:notice] = "削除しました"
   end
 
   private

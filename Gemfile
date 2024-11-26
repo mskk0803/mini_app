@@ -19,7 +19,7 @@ gem "puma", "~> 5.0"
 gem "jsbundling-rails"
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
-gem "turbo-rails"
+gem "turbo-rails", '1.1.1'
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
@@ -83,3 +83,7 @@ gem 'pry-rails'
 gem "tailwindcss-rails", "~> 3.0"
 
 # gem 'ruby-vips', '~> 2.2', '>= 2.2.2'
+
+gem 'rails-i18n', '~> 7.0.0'
+
+gem 'devise-i18n-views'

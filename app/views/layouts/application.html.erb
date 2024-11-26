@@ -16,11 +16,12 @@
   <body>
   <div className="container mx-auto">
     <%= render "layouts/shared/header" %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <% flash.each do |message_type, message| %>
+      <div class="<%= flash_background_color(message_type) %> px-4 py-2 rounded-md text-white mb-4">
+        <%= message %>
+      </div>
+    <% end %>
     <%= yield %>
   </div>
-
-
   </body>
 </html>
