@@ -83,3 +83,7 @@ gem 'pry-rails'
 gem "tailwindcss-rails", "~> 3.0"
 
 # gem 'ruby-vips', '~> 2.2', '>= 2.2.2'
+
+gem 'rails-i18n', '~> 7.0.0'
+
+gem 'devise-i18n-views'

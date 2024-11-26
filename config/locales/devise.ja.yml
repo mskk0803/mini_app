@@ -1,0 +1,9 @@
+ja:
+  devise:
+    failure:
+      invalid: ユーザー名またはパスワードが正しくありません。
+    sessions:
+      signed_in: ログインに成功しました。
+      signed_out: ログアウトしました。
+    submit:
+      login: ログイン

@@ -1,0 +1,20 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+      game: ゲーム
+      tag: タグ
+    attributes:
+      user: 
+        user_name: ユーザー名
+        password: パスワード
+      game:
+        title: ゲームタイトル
+        min: 最少人数
+        max: 最大人数
+        time: 所要時間
+        dificullty: 難易度
+        space: スペース
+      tag:
+        name: タグ
+        
