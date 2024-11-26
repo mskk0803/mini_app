@@ -1,5 +1,10 @@
 class Game < ApplicationRecord
+  # validations
   validates :title, presence: true
+  validates :min, allow_blank: true, numericality: { only_integer: true }
+  validates :max, allow_blank: true, numericality: { only_integer: true }
+  validates :time, allow_blank: true, numericality: { only_integer: true }
+  # asociations
   has_rich_text :content
   has_many :game_tags, dependent: :destroy
   has_many :tags, through: :game_tags
