@@ -6,7 +6,6 @@ class Game < ApplicationRecord
   has_many :comment, dependent: :destroy
 
   def save_tag(tag_json)
-    binding.pry
     json_array = JSON.parse(tag_json).map do |j|
       j.values[0]
     end

@@ -27,3 +27,6 @@ COPY yarn.lock /mini_app/yarn.lock
 RUN bundle install
 RUN yarn install
 COPY . /mini_app
+
+# bin/devで起動
+CMD ["bin/dev"]
