@@ -5,4 +5,3 @@
 //= link actiontext.css
 //= link application.js
 //= link controllers/application.js
-//= link tags.js
