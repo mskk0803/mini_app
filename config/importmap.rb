@@ -11,7 +11,7 @@ pin "@hotwired/stimulus", to: "@hotwired--stimulus.js" # @3.2.2
 
 # javascript反映
 pin_all_from "app/javascript/controllers", under: "controllers"
-pin "tags"
+# pin "tags_controller"
 
 # tagifyの反映
 pin "@yaireo/tagify", to: "@yaireo--tagify.js" # @4.32.0

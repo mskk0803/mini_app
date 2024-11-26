@@ -40,7 +40,7 @@
           id: "tags-input",
           value: @game.tags.pluck(:name).join(","), 
           placeholder: '[Enter]で区切って入力',
-          class: "tagify",
+          class: "input height-unset custom-tagify-look",
           data: { controller: "tag" }
       %>
     </div>
@@ -49,6 +49,3 @@
   <% end %>
 </div>
 
- <% content_for :js do %>
-   <%= javascript_import_module_tag "tags" %>
- <% end %>

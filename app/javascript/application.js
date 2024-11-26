@@ -10,3 +10,14 @@ application.debug = false
 window.Stimulus   = application
 
 export { application }
+
+import Tagify from "@yaireo/tagify"
+
+var input = document.getElementById("tags-input");
+// tagifyの設定
+  var tagify = new Tagify(input, {whitelist:[],
+    dropdown:{
+      enabled: 0,
+      closeOnSelect: false,
+    },
+  })
