@@ -10,6 +10,8 @@ class Game < ApplicationRecord
   has_many :tags, through: :game_tags
   # has_many :comment, dependent: :destroy
 
+  
+
   def save_tag(tag_json)
     if !tag_json.empty?
       json_array = JSON.parse(tag_json).map do |j|
