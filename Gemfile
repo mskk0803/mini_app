@@ -87,3 +87,5 @@ gem "tailwindcss-rails", "~> 3.0"
 gem 'rails-i18n', '~> 7.0.0'
 
 gem 'devise-i18n-views', '~> 0.3.7'
+
+gem 'ransack'
