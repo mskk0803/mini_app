@@ -10,7 +10,10 @@ class Game < ApplicationRecord
   has_many :tags, through: :game_tags
   # has_many :comment, dependent: :destroy
 
-  
+  # ransackのホワイトリスト
+  def self.ransackable_attributes(auth_object = nil)
+    ["title"]
+  end
 
   def save_tag(tag_json)
     if !tag_json.empty?

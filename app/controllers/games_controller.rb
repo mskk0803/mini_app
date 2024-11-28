@@ -2,7 +2,8 @@ class GamesController < ApplicationController
   require "json"
   skip_before_action :authenticate_user!, only: %i[index show]
   def index
-    @games = Game.all
+    @q = Game.ransack(params[:q])
+    @games = @q.result(distinct: true)
   end
 
   def show
