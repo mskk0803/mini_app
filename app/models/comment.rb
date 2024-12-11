@@ -1,4 +1,4 @@
 class Comment < ApplicationRecord
-  belons_to :game
+  belongs_to :game
   validates :comment, presence: true
 end
